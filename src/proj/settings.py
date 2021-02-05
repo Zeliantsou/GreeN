@@ -25,7 +25,7 @@ SECRET_KEY = 'v+tjyfn)*ht08btibot4a6eibblq5@@*ahz@!u-5%zuc%pr^s!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gr1ner.pythonanywhere.com']
 
 
 # Application definition
@@ -119,3 +119,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/Gr1NeR/GreeN/static'
