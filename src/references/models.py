@@ -79,3 +79,4 @@ class Series(models.Model):
         auto_now_add = False)
     def __str__(self):
         return self.name
+#
