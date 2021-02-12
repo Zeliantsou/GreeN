@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        <table border="1">
+            <tr>
+                <td><a href="">новинки</a></td>
+                <td><a href="">популярные</a></td>
+                <td><a href="">акции</a></td>
+                <td>BYN / USD</td>
+            </tr>
+        </table>
+    </h1>
+    <h2>
+        <table border="1">
+            <tr><th>Мой профиль</th></tr>
+            <tr><th>Корзина</th></tr>
+            <tr><th>Добавить в корзину</th></tr>
+            <tr><th>Поиск</th></tr>
+        </table>
+        <br />
+        <table border="1">
+            <tr><th>Книги</th></tr>
+            <tr><th><a href="{% url 'all-authors' %}">Авторы</a></th></tr> # вставить карточку автора
+            <tr><th>Жанры</th></tr>
+            <tr><th>Издательства</th></tr>
+        </table>
+    </h2>
+</body>
+</html>
