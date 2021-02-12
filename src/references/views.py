@@ -14,4 +14,5 @@ def author_detail(request, pk):
     description = certain_author.description
     context = {"name":name, "description":description}
     return render(request, template_name="author_detail.html", context=context)
+    #
     
