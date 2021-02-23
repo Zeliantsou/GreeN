@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block main_offer %}
+
+</br>
+<a class="btn btn-success" href="{% url 'author-create' %}" role="button">Добавить автора</a>
+<font color="green"><hr class="featurette-divider"></font>
+
+<table class="table">
+    <tbody>
+    {% for author in object_list %}
+      <tr>
+        <td><a href="{% url 'author-detail' author.pk %}"><font color="black">{{ author.name }}</font></a></td>
+        <td><font color="black">{{ author.description }}</font></td>
+        <td><a class="nav-link active" aria-current="page" href="{% url 'author-update' author.pk %}"><font color="green"><i class="far fa-edit"></i></font></a></td>
+        <td><a class="nav-link active" aria-current="page" href="{% url 'author-delete' author.pk %}"><font color="green"><i class="far fa-trash-alt"></i></font></a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <font color="green"><hr class="featurette-divider"></font>
+
+<a class="btn btn-success" href="{% url 'author-create' %}" role="button">Добавить автора</a>
+
+{% endblock main_offer %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block main_offer %}
+</br>
+<main class="container">
+<div class="bg-light p-5 rounded">
+    <h1>{{ object.name }}</h1>
+    <p class="lead">{{ object.description }}</p>
+    <a href="{% url 'author-list' %}"><button type="button" class="btn btn-outline-success">Все авторы</button></a>
+    <div class="btn-group">
+        <a class="nav-link active" aria-current="page" href="{% url 'author-update' object.pk %}"><font color="green"><i class="far fa-edit"></i></font></a>
+        <a class="nav-link active" aria-current="page" href="{% url 'author-create' %}"><font color="green"><i class="fas fa-plus"></i></font></a>
+        <a class="nav-link active" aria-current="page" href="{% url 'author-delete' object.pk %}"><font color="green"><i class="far fa-trash-alt"></i></font></a>
+    </div>
+</div>
+</main>
+{% endblock main_offer %}

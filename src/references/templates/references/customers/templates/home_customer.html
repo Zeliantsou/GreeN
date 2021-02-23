@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        <table border="1">
+            <tr>
+                <td><a href="">новинки</a></td>
+                <td><a href="">популярные</a></td>
+                <td><a href="">акции</a></td>
+                <td>BYN / USD</td>
+            </tr>
+        </table>
+    </h1>
+    <h2>
+        <table border="1">
+            <tr><th><a href="">Мой профиль</a></th></tr>
+            <tr><th><a href="">Корзина</a></th></tr>
+            <tr><th><a href="">Добавить в корзину</a></th></tr>
+            <tr><th><a href="">Поиск</a></th></tr>
+        </table>
+        <br />
+        <table border="1">
+            <tr><th><a href="{% url 'book-list' %}">Книги</a></th></tr>
+            <tr><th><a href="{% url 'author-list' %}">Авторы</a></th></tr>
+            <tr><th><a href="{% url 'genre-list' %}">Жанры</a></th></tr>
+            <tr><th><a href="{% url 'publisher-list' %}">Издательства</a></th></tr>
+            <tr><th><a href="">Серии книг</a></th></tr>
+        </table>
+        <br />
+        <table border="1">
+            <tr><th><a href="{% url 'customer-registration' %}">Регистрация </a></th></tr>
+            <tr><th><a href="">Вход</a></th></tr>
+        </table>
+    </h2>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block main_offer %}
+
+<body>
+    <div class="alert alert-danger" role="alert">Вы уверены, что хотите удалить издательство "{{ object.name }}"?</div>
+    <h2>
+        <form method="POST">
+            {% csrf_token %}
+            <button type="button" class="btn btn-secondary btn-lg">Удалить</button> <a href="{% url 'publisher-list' %}"><button type="button" class="btn btn-secondary btn-lg" >Отмена</button></a>
+        </form>
+    </h2>
+</body>
+
+{% endblock main_offer %}

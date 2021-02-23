@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block main_offer %}
+
+</br>
+<a class="btn btn-success" href="{% url 'genre-create' %}" role="button">Добавить жанр</a>
+<font color="green"><hr class="featurette-divider"></font>
+
+<table class="table">
+    <tbody>
+    {% for genre in object_list %}
+      <tr>
+        <td><a href="{% url 'genre-detail' genre.pk %}"><font color="black">{{ genre.name }}</font></a></td>
+        <td><font color="black">{{ genre.description }}</font></td>
+        <td><a class="nav-link active" aria-current="page" href="{% url 'genre-update' genre.pk %}"><font color="green"><i class="far fa-edit"></i></font></a></td>
+        <td><a class="nav-link active" aria-current="page" href="{% url 'genre-delete' genre.pk %}"><font color="green"><i class="far fa-trash-alt"></i></font></a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+<font color="green"><hr class="featurette-divider"></font>
+<a class="btn btn-success" href="{% url 'genre-create' %}" role="button">Добавить жанр</a>
+
+{% endblock main_offer %}
