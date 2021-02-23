@@ -3,7 +3,6 @@ from django.http import HttpResponse
 from django.views.generic import DetailView, ListView, CreateView
 from django.contrib import messages
 
-from books.models import Book
 from customers.models import Customer
 from customers.forms import UserRegisterForm
 
@@ -16,7 +15,7 @@ from customers.forms import UserRegisterForm
 
 def home_customer(request):
     context = {}
-    return render(request, template_name="customers/customer_offer.html", context=context)
+    return render(request, template_name="home_customer.html", context=context)
 
 class CustomerList(ListView):
     model = Customer
@@ -32,14 +31,3 @@ def test_register(request):
     else:
         form = UserRegisterForm()
     return render(request, template_name="test_register.html", context={"form":form})
-
-def promotion(request):
-    promotion_dict = {}
-    promotion_list = []
-    item_max_pk = Book.objects.last()
-    max_pk = item_max_pk.pk
-    for i in range(4):
-        promotion_list.append(Book.objects.get(pk=max_pk))
-        max_pk = max_pk - 1
-    promotion_dict["promotion_dict"] = promotion_list
-    return render(request, template_name="customers/customer_offer.html", context=promotion_dict)

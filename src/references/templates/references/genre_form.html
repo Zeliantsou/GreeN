@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block main_offer %}
+</br>
+<main class="container">
+    <h3><div class="alert alert-dark" role="alert">
+        <font color="green">Данные жанра:</font>
+    </div></h3>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            </br>
+            <button type="button" class="btn btn-success">Добавить</button> <a href="{% url 'genre-list' %}"><button type="button" class="btn btn-secondary" >Отмена</button></a>
+        </form>
+</main>
+{% endblock main_offer %}

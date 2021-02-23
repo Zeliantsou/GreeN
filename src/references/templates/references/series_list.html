@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block main_offer %}
+
+</br>
+<a class="btn btn-success" href="{% url 'series-create' %}" role="button">Добавить серию</a>
+<font color="green"><hr class="featurette-divider"></font>
+
+<table class="table">
+    <tbody>
+    {% for series in object_list %}
+      <tr>
+        <td><a href="{% url 'series-detail' series.pk %}"><font color="black">{{ series.name }}</font></a></td>
+        <td><font color="black">{{ series.description }}</font></td>
+        <td><a class="nav-link active" aria-current="page" href="{% url 'series-update' series.pk %}"><font color="green"><i class="far fa-edit"></i></font></a></td>
+        <td><a class="nav-link active" aria-current="page" href="{% url 'series-delete' series.pk %}"><font color="green"><i class="far fa-trash-alt"></i></font></a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+<font color="green"><hr class="featurette-divider"></font>
+<a class="btn btn-success" href="{% url 'series-create' %}" role="button">Добавить серию</a>
+
+{% endblock main_offer %}
