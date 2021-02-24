@@ -60,10 +60,20 @@
           <a class="nav-link active" aria-current="page" href="{% url 'home-customer' %}">Главная</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="">Вход</br>Выход</a>
+          {% if user.is_authenticated %}
+          <a class="nav-link active" aria-current="page" href="">Выход</a>
+          {% endif %}
+          {% if not user.is_authenticated %}
+          <a class="nav-link active" aria-current="page" href="">Вход</a>
+          {% endif %}
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'customer-registration' %}">Регистрация</br>Мой профиль</a>
+          {% if user.is_authenticated %}
+          <a class="nav-link active" aria-current="page" href="{% url 'customer-registration' %}">Мой профиль</a>
+          {% endif %}
+          {% if not user.is_authenticated %}
+          <a class="nav-link active" aria-current="page" href="{% url 'customer-registration' %}">Регистрация</a>
+          {% endif %}
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href=""><i class="fas fa-shopping-cart"></i></a>
